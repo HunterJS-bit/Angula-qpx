@@ -1,8 +1,8 @@
 
-#NgFlights 
+# NgFlights 
 
 Simple Angular app to communicate with google qpx api and display available flights
-Thanx to profesor at Nicat
+Project  developed As a part of Frontend introductory course ,thanx mostly to profesor and students ...
 
 
 # Flights
