@@ -1,0 +1,86 @@
+<app-topnav></app-topnav>
+<div class="container">
+  <div class="hero"></div>
+  <div class="row mt-6 home-box">
+    <div class="col-12">
+      <h1>Find Your Perfect Trip</h1>
+      <div class="row">
+        <div class="flight-box col-xs-12 col-md-8">
+
+          <div class="row">
+            <div class="col-12">
+              <h2>Search for Cheap Flights</h2>
+            </div>
+            <div class="form-group col-6">
+              <label for="origin">From</label>
+              <input [(ngModel)]="searchFlight.origin" type="text" class="form-control" id="origin" placeholder="City, Airport">
+            </div>
+            <div class="form-group col-6">
+              <label for="destination">To</label>
+              <input [(ngModel)]="searchFlight.destination" type="text" class="form-control" id="destination" placeholder="City, Airport">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-6">
+              <label>Departing</label>
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp_to" [(ngModel)]="searchFlight.start_date" ngbDatepicker #dfrom="ngbDatepicker">
+                <div class="input-group-addon" (click)="dfrom.toggle()">
+                  <i class="fa fa-calendar"></i>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-6">
+              <label for="destination">Returning</label>
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp_to" [(ngModel)]="searchFlight.end_date" ngbDatepicker #dto="ngbDatepicker">
+                <div class="input-group-addon" (click)="dto.toggle()">
+                  <i class="fa fa-calendar"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-4">
+              <label for="adultCount">Adults</label>
+              <input [(ngModel)]="searchFlight.adultCount" type="number" step="1" max="10" min="0" class="form-control" id="adultCount"
+                placeholder="Adults">
+            </div>
+            <div class="form-group col-4">
+              <label for="childCount">Childs</label>
+              <input [(ngModel)]="searchFlight.childCount" type="number" step="1" max="10" min="0" class="form-control" id="childCount"
+                placeholder="Deca">
+            </div>
+            <div class="form-group col-4">
+              <label for="infantInSeatCount">Babys</label>
+              <input [(ngModel)]="searchFlight.infantInSeatCount" type="number" step="1" max="10" min="0" class="form-control" id="infantInSeatCount"
+                placeholder="Bebe">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-right">
+              <button (click)="doSearch()" type="submit" class="btn btn-warning">Search for Flights</button>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+        <div class="flight-box-r hidden-sm col-md-4">
+          <div class="engineOne text-center">
+            <h3>Popular Flights</h3>
+          </div>
+        </div>
+      </div>
+      <div>
+        <pre style="color: yellow">
+  {{searchResults|json}}
+</pre>
+      </div>
+    </div>
+  </div>
+</div>
+       
+<!--<app-footer></app-footer>-->
